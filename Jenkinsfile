@@ -26,7 +26,8 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        sh 'docker build -t simple-web .'
+        sh 'docker build -t 192.168.1.7:5000/simple-web .'
+        sh 'docker push 192.168.1.7:5000/simple-web .'
       }
     }
   }
