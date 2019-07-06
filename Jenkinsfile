@@ -21,5 +21,15 @@ pipeline {
         }
       }
     }
+    stage('Package') {
+      steps {
+        sh 'mvn package'
+      }
+    }
+    stage('Publish') {
+      steps {
+        sh 'docker build -t simple-web .'
+      }
+    }
   }
 }
