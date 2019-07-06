@@ -37,7 +37,7 @@ pipeline {
             "DOCKER_HOST=tcp://192.168.99.100:2376",
             "DOCKER_CERT_PATH=/home/.docker/machine/machines/bienvm1"
           ]) {
-            sh "docker ps"
+            sh "docker service update --image 192.168.1.7:5000/simple-web simple-web"
           }
       }
     }
