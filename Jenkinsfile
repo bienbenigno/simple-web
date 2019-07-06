@@ -30,5 +30,10 @@ pipeline {
         sh 'docker push 192.168.1.7:5000/simple-web'
       }
     }
+    stage('Production') {
+      steps {
+        sh 'eval $(docker-machine env bienvm1)'
+      }
+    }
   }
 }
