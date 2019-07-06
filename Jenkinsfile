@@ -31,11 +31,13 @@ pipeline {
       }
     }
     stage('Production') {
-      withEnv([
-        "DOCKER_TLS_VERIFY=0",
-        "DOCKER_HOST=tcp://192.168.99.100:2376"
-      ]) {
-        sh "docker ps"
+      steps {
+          withEnv([
+            "DOCKER_TLS_VERIFY=0",
+            "DOCKER_HOST=tcp://192.168.99.100:2376"
+          ]) {
+            sh "docker ps"
+          }
       }
     }
   }
