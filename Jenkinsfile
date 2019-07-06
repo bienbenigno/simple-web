@@ -35,7 +35,7 @@ pipeline {
           withEnv([
             "DOCKER_TLS_VERIFY=0",
             "DOCKER_HOST=tcp://192.168.99.100:2376",
-            "DOCKER_CERT_PATH=/home/bienbenigno/.docker/machine/machines/bienvm1"
+            "DOCKER_CERT_PATH=/home/.docker/machine/machines/bienvm1"
           ]) {
             sh "docker ps"
           }
