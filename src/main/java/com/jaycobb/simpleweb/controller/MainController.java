@@ -1,7 +1,6 @@
 package com.jaycobb.simpleweb.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -17,7 +16,7 @@ public class MainController {
     public Map<String, String> index() {
 
         final Map<String, String> message = new HashMap<>();
-        message.put("message", "Hello, " + counter.incrementAndGet());
+        message.put("message", "Test update 1, " + counter.incrementAndGet());
         return message;
     }
 }
