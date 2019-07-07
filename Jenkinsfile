@@ -31,6 +31,7 @@ pipeline {
       }
     }
     stage('Production') {
+      /*
       steps {
           withEnv([
             "DOCKER_TLS_VERIFY=1",
@@ -39,6 +40,10 @@ pipeline {
           ]) {
             sh "docker service update --image 192.168.1.7:5000/simple-web simple-web"
           }
+      }
+      */
+      steps {
+        sh "ssh bienbenigno@192.168.99.103 'docker service update --image 192.168.1.7:5000/simple-web simple-web'"
       }
     }
   }
