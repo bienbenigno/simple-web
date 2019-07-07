@@ -16,7 +16,7 @@ public class MainController {
     public Map<String, String> index() {
 
         final Map<String, String> message = new HashMap<>();
-        message.put("message", "Test update 1, " + counter.incrementAndGet());
+        message.put("message", "Test update 2, " + counter.incrementAndGet());
         return message;
     }
 }
